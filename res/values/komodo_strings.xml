@@ -199,4 +199,11 @@
     <string name="theme_customization_statusbar_height_title">Statusbar height</string>
     <string name="theme_customization_ui_radius_title">UI radius</string>
 
+    <!-- QuickSettings general category -->
+    <string name="quick_settings_general_category_title">General</string>
+
+    <!-- QuickSettings haptic feedback -->
+    <string name="quick_settings_vibrate_title">Vibrate on touch</string>
+    <string name="quick_settings_vibrate_summary">Vibrate when touching QS tiles</string>
+
 </resources>
