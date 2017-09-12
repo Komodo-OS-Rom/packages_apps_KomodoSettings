@@ -39,4 +39,10 @@
         android:fragment="com.komodo.settings.StatusBarBattery"
         android:title="@string/battery_style_title" />
 
+    <com.komodo.settings.preferences.CardviewPreference
+        android:key="statusbar_category"
+        android:title="@string/statusbar_title"
+        android:fragment="com.komodo.settings.fragments.StatusBar"
+        android:icon="@drawable/tile_statusbar" />
+
 </PreferenceScreen>
