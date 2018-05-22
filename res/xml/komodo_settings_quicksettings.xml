@@ -190,12 +190,6 @@
             android:dependency="qs_show_brightness_slider"
             android:defaultValue="true"/>
 
-
-	<com.komodo.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_bottom_brightness"
-            android:title="@string/qs_brightness_position_bottom_title"
-            android:summary="@string/qs_brightness_position_bottom_summary"
-            android:defaultValue="false" />
  </PreferenceCategory>
 
 </PreferenceScreen>
