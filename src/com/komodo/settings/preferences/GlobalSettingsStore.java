@@ -71,4 +71,3 @@ public class GlobalSettingsStore extends androidx.preference.PreferenceDataStore
     }
 
 }
-
