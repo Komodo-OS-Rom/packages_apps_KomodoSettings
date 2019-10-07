@@ -111,4 +111,10 @@
 			 android:summary="@string/clock_style_category_summary"
 			 android:fragment="com.komodo.settings.fragments.ClockSettings" />
 
+        <com.komodo.settings.preferences.SystemSettingSwitchPreference
+            android:key="show_fourg_icon"
+            android:title="@string/show_fourg_icon_title"
+            android:summary="@string/show_fourg_icon_summary"
+            android:defaultValue="false"/>
+
 </PreferenceScreen>
