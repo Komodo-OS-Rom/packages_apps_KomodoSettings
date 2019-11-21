@@ -63,7 +63,7 @@
             android:title="@string/buttons_title"
             android:fragment="com.komodo.settings.fragments.Buttons"
             android:icon="@drawable/ic_settings_buttons"/>
-        
+
         <!-- Gesture -->
         <Preference
             android:key="gestures_category"
