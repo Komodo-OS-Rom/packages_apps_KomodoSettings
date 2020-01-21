@@ -24,4 +24,16 @@
         android:title="@string/status_bar_custom_header_title"
         android:summary="@string/status_bar_custom_header_summary"
         android:defaultValue="false" />
+
+    <com.komodo.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_bottom_brightness"
+        android:title="@string/qs_brightness_position_bottom_title"
+        android:summary="@string/qs_brightness_position_bottom_summary"
+        android:defaultValue="false" />
+    <com.komodo.config.center.preferences.SystemSettingSwitchPreference
+        android:key="qs_datausage"
+        android:title="@string/qs_datausage_title"
+        android:summary="@string/qs_datausage_subtitle"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
