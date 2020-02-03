@@ -365,4 +365,8 @@
     <string name="qs_show_battery_estimate_title">Battery estimates</string>
     <string name="qs_show_battery_estimate_summary">Show estimated remaining battery life next to the icon</string>
 
+    <!-- MIUI-like brightness slider -->
+    <string name="brightness_slider_qs_unexpanded">MIUI style brightness slider (beta)</string>
+    <string name="brightness_slider_qs_unexpanded_summary">Shows brightness slider below qs panel</string>
+
 </resources>
