@@ -375,11 +375,16 @@
     <string name="qs_blur_alpha_title">Blur alpha</string>
     <string name="qs_blur_alpha_summary">Sets the blur transparency</string>
 
-    <!-- MIUI-like brightness slider -->
+    <!-- QS battery estimates -->
+    <string name="qs_show_battery_estimate_title">Battery estimates</string>
+    <string name="qs_show_battery_estimate_summary">Show estimated remaining battery life next to the icon</string>
+
+    <!-- MIUI-like brightness slider 
     <string name="brightness_slider_qs_unexpanded">MIUI style brightness slider (beta)</string>
     <string name="brightness_slider_qs_unexpanded_summary">Shows brightness slider below qs panel</string>
+    -->
 
-    <!-- 4G icon -->
+  <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G icon</string>
     <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
 
