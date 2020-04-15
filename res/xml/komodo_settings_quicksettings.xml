@@ -51,11 +51,13 @@
         android:summary="@string/qs_tile_title_visibility_summary" 
         android:defaultValue="true" /> 
 
+    <!--
     <com.komodo.settings.preferences.SystemSettingSwitchPreference
             android:key="brightness_slider_qs_unexpanded"
             android:title="@string/brightness_slider_qs_unexpanded"
             android:summary="@string/brightness_slider_qs_unexpanded_summary"
             android:defaultValue="false" />
+    -->
 
     <PreferenceCategory
         android:key="quick_settings_animations"
