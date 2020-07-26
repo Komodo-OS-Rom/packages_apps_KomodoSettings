@@ -51,8 +51,8 @@
         <com.komodo.settings.preference.SystemSettingSwitchPreference 
             android:key="qs_datausage" 
             android:title="@string/qs_datausage_title" 
-            android:summary="@string/qs_datausage_subtitle" 
-            android:defaultValue="false" />
+            android:entryValues="@array/qs_datausage_values"
+            android:defaultValue="0" />
     </PreferenceCategory>
 
     <com.komodo.settings.preferences.SystemSettingMasterSwitchPreference
