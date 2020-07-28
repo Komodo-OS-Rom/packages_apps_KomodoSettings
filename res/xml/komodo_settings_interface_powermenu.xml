@@ -29,6 +29,12 @@
             android:summary="@string/powermenu_screenshot_summary"
             android:defaultValue="false" />
 
+        <com.komodo.settings.preferences.SystemSettingSwitchPreference
+            android:key="powermenu_screenrecord"
+            android:title="@string/powermenu_screenrecord_title"
+            android:summary="@string/powermenu_screenrecord_summary"
+            android:defaultValue="false" />
+
         <SwitchPreference
             android:key="powermenu_torch"
             android:title="@string/powermenu_torch"
