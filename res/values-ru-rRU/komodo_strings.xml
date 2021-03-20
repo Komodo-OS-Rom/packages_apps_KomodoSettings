@@ -15,8 +15,8 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="komodo_settings_title">Komodo фишки</string>
-    <string name="komodo_dashboard_summary">Оригинал из Индонезии</string>
+    <string name="komodo_settings_title">Komodo Настройки</string>
+    <string name="komodo_dashboard_summary">Настройте свое устройство безумно</string>
     <!-- Categories -->
     <string name="about_title">О Komodo</string>
     <string name="animations_title">Анимации</string>
