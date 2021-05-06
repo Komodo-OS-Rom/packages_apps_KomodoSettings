@@ -28,4 +28,9 @@
         settings:min="0"
         settings:units="" />
 
+    <Preference
+        android:key="battery_category"
+        android:title="@string/battery_style_title"
+        android:fragment="com.komodo.settings.fragments.StatusBarBattery" />
+
 </PreferenceScreen>

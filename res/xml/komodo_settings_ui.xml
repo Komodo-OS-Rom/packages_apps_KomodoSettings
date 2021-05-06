@@ -35,11 +35,6 @@
         android:icon="@drawable/tile_quicks" />
 
     <com.komodo.settings.preferences.CardviewPreference
-        android:key="battery_settings"
-        android:fragment="com.komodo.settings.StatusBarBattery"
-        android:title="@string/battery_style_title" />
-
-    <com.komodo.settings.preferences.CardviewPreference
         android:key="statusbar_category"
         android:title="@string/statusbar_title"
         android:fragment="com.komodo.settings.fragments.StatusBar"
