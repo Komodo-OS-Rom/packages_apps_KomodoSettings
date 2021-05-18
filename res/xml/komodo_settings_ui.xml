@@ -22,11 +22,11 @@
         android:key="ui_animation"
         android:layout="@layout/ui_animation" />
 
-    <com.komodo.settings.preferences.CardviewPreference
+    <!--<com.komodo.settings.preferences.CardviewPreference
         android:key="theming_category"
         android:title="@string/theming_title"
         android:fragment="com.komodo.settings.fragments.Theming"
-        android:icon="@drawable/tile_theme" />
+        android:icon="@drawable/tile_theme" />-->
 
     <com.komodo.settings.preferences.CardviewPreference
         android:key="quicksettings_category"
