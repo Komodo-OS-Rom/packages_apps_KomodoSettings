@@ -82,9 +82,9 @@ public class KomodoSettings extends SettingsPreferenceFragment {
                 viewPager.setCurrentItem(0);
              } else if (item.getItemId() == R.id.navigation_ui) {
                 viewPager.setCurrentItem(1);
-             } else if (item.getItemId() == R.id.navigation_notifications) {
-                viewPager.setCurrentItem(2);
              } else if (item.getItemId() == R.id.navigation_gestures) {
+                viewPager.setCurrentItem(2);
+             } else if (item.getItemId() == R.id.navigation_notifications) {
                 viewPager.setCurrentItem(3);
              } else if (item.getItemId() == R.id.navigation_misc) {
                viewPager.setCurrentItem(4);
@@ -138,8 +138,8 @@ public class KomodoSettings extends SettingsPreferenceFragment {
             super(fm);
             frags[0] = new About();
             frags[1] = new Ui();
-            frags[2] = new Notifications();
-            frags[3] = new Gestures();
+            frags[2] = new Gestures();
+            frags[3] = new Notifications();
             frags[4] = new Misc();
         }
 
