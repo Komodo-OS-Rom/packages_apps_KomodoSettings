@@ -15,45 +15,41 @@
  */
 package com.komodo.settings.fragments;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.content.Context;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
-import android.content.res.Resources;
+import android.content.Context;
 import android.content.om.IOverlayManager;
-import android.content.om.OverlayInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 import android.os.ServiceManager;
 import android.os.UserHandle;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
+import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.*;
+
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+
 import com.android.settings.R;
-
-import com.android.internal.logging.nano.MetricsProto;
-
-import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.development.OverlayCategoryPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settingslib.core.lifecycle.Lifecycle;
+import com.android.settingslib.search.SearchIndexable;
 
-import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class Theming extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener {
+@SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
+public class Theming extends DashboardFragment
+        implements OnPreferenceChangeListener {
 
     public static final String TAG = "Theming";
     private static final String ACCENT_COLOR = "accent_color";
@@ -67,10 +63,24 @@ public class Theming extends SettingsPreferenceFragment
     private ColorPickerPreference mGradientColor;
 
     @Override
+    public int getMetricsCategory() {
+        return MetricsEvent.KOMODO_SETTINGS;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
+    }
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.komodo_settings_theming;
+    }
+
+    @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setRetainInstance(true);
-        mContext = getActivity();
         getActivity().setTitle(R.string.theming_title);
 
         // RGB accent
@@ -80,7 +90,26 @@ public class Theming extends SettingsPreferenceFragment
         setupGradientPref();
     }
 
-     @Override
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, getSettingsLifecycle(), this);
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(
+            Context context, Lifecycle lifecycle, Fragment fragment) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.accent_color"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.font"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.adaptive_icon_shape"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.icon_pack.android"));
+        return controllers;
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mThemeColor) {
             int color = (Integer) newValue;
@@ -126,20 +155,28 @@ public class Theming extends SettingsPreferenceFragment
         mGradientColor.setOnPreferenceChangeListener(this);
     }
 
-    @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.KOMODO_SETTINGS;
-    }
+    /**
+     * For Search.
+     */
 
-    protected String getLogTag() {
-        return TAG;
-    }
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
 
-    @Override
-    protected int getPreferenceScreenResId() {
-        return R.xml.komodo_settings_theming;
-    }
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.komodo_settings_theming;
+                    result.add(sir);
+                    return result;
+                }
 
-    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.komodo_settings_theming);
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    return keys;
+                }
+            };
 }
