@@ -194,4 +194,9 @@
     <string name="use_old_mobiletype_title">Old mobiletype</string>
     <string name="use_old_mobiletype_summary">Use pre-p mobiletype icons for signal (Reboot required)</string>
 
+    <!-- gvisual mod -->
+    <string name="gvisual_mod_category_title">G-visual mod</string>
+    <string name="theme_customization_statusbar_height_title">Statusbar height</string>
+    <string name="theme_customization_ui_radius_title">UI radius</string>
+
 </resources>

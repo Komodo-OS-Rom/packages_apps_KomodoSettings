@@ -108,6 +108,10 @@ public class Theming extends DashboardFragment
         controllers.add(new OverlayCategoryPreferenceController(context,
                 "android.theme.customization.icon_pack.android"));
         controllers.add(new QsTileStylePreferenceController(context));
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.statusbar_height"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.ui_radius"));
         return controllers;
     }
 
